@@ -11,24 +11,30 @@ import About from "./Pages/About";
 import Footer from "./Components/Footer";
 import LoginPopup from "./Components/LoginPopup";
 import Shop from "./Pages/Shop";
+import MainHeade from "./Pages/MainHeade";
+import NotFound from "./Pages/NotFound";
+
 function App() {
-  const [showLogin,setShowLogin]=useState(false)
-  const [showFooter,setShowFooter]=useState(true)
+  const [showLogin, setShowLogin] = useState(false);
+  const [showFooter, setShowFooter] = useState(true);
+
   return (
     <>
-      {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
-      
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+
       <div className="">
-        <Navbar setShowLogin={setShowLogin}/>
+        <Navbar setShowLogin={setShowLogin} />
         <Routes>
-          <Route path="/" element={<Home  setShowFooter={setShowFooter} showFooter={showFooter}/>} />
-          <Route path="/shop" element={<Shop setShowFooter={setShowFooter} showFooter={showFooter}/>}/>
-          <Route path="/cart" element={<Cart setShowFooter={setShowFooter} showFooter={showFooter}/>} />
-          <Route path="/order" element={<PlaceOrder setShowFooter={setShowFooter} showFooter={showFooter}/>} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<MainHeade />}>
+            <Route index element={<Home setShowFooter={setShowFooter} showFooter={showFooter} />} />
+            <Route path="/shop" element={<Shop setShowFooter={setShowFooter} showFooter={showFooter} />} />
+            <Route path="/cart" element={<Cart setShowFooter={setShowFooter} showFooter={showFooter} />} />
+            <Route path="/order" element={<PlaceOrder setShowFooter={setShowFooter} showFooter={showFooter} />} />
+            <Route path="/about" element={<About />} />
+          </Route>
         </Routes>
       </div>
-      {showFooter?<Footer />:<></>}
+      {showFooter ? <Footer /> : <></>}
     </>
   );
 }
