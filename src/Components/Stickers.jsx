@@ -20,7 +20,7 @@ const Stickers = ({ category, setCategory }) => {
           }}
           animate={{ opacity: 1, y: 0, rotate: index === 0 || index===1 ? -15 : index >= shop_list.length - 2 ? 15 : 0  }}
           transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
-          className="flex flex-col items-center justify-center gap-4 cursor-pointer flex-shrink-0 p-4  bg-gradient-to-b from-[#fc97b9] via-[#e2729b] to-[#2d2d2d] rounded-2xl shadow-lg "
+          className="flex flex-col items-center justify-center gap-4 cursor-pointer flex-shrink-0 p-4  bg-gradient-to-b from-[#c86888] via-[#b13361] to-[#1e1e1e] rounded-2xl shadow-md shadow-gray-100 "
         >
           <img
             className={`w-44 h-44 sm:w-36 sm:h-36 xs:w-28 xs:h-28 xl:w-48 xl:h-48 rounded-2xl transition-all duration-300 ease-in-out ${
@@ -29,7 +29,7 @@ const Stickers = ({ category, setCategory }) => {
             src={item.shop_img}
             alt={item.shop_name}
           />
-          <p className="text-white text-xl sm:text-lg xs:text-base hover:text-gray-300 transition-all duration-300 ease-in-out font-semibold">
+          <p className="text-white text-xl sm:text-lg xs:text-base bg-transparent hover:text-gray-300 transition-all duration-300 ease-in-out font-semibold">
             {item.shop_name}
           </p>
         </motion.div>

@@ -22,7 +22,7 @@ function App() {
     <>
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
 
-      <div className="">
+      <div className="bg-slate-900 ">
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<MainHeade />}>

@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
+import { PiShoppingCartSimpleFill } from "react-icons/pi";
+
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
@@ -21,18 +23,14 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24 fixed top-0 left-1/2 transform -translate-x-1/2 w-full bg-white shadow-md shadow-gray-100 z-50 px-6 pr-8">
+    <div className="flex justify-between items-center h-24 fixed top-0 left-1/2 transform -translate-x-1/2 w-full bg-slate-900 shadow-md shadow-slate-700 z-50 px-6 pr-8">
       <Link to="/">
-        <img
-          src={assets.logo}
-          alt="Logo"
-          className="w-38 h-20 md:w-42 md:h-24 items-center cursor-pointer"
-        />
+        <h3 className="text-3xl text-white font-cherry font-bold tracking-widest">ADAPT</h3>
       </Link>
 
       {/* Menu Items */}
       <div className="menu-items hidden sm:block">
-        <ul className="flex md:gap-14 gap-12 font-medium text-[16px] md:text-[20px]">
+        <ul className="flex md:gap-14 gap-12 font-medium text-[16px] md:text-[20px] text-white">
           {["home", "shop", "tools", "contact"].map((item) => (
             <Link
               key={item}
@@ -52,13 +50,10 @@ const Navbar = ({ setShowLogin }) => {
 
       {/* Right Menu */}
       <div className="menu-right flex md:gap-x-10 gap-x-8 items-center">
-        <div className="relative">
+        <div className="relative ">
           <Link to="/cart">
-            <img
-              src={assets.cart}
-              className="md:h-7 md:w-7 h-6 w-6 mr-2 cursor-pointer"
-              alt="Basket"
-            />
+          <PiShoppingCartSimpleFill color="white" size={30}/>
+          
           </Link>
           <div
             className={
@@ -73,14 +68,14 @@ const Navbar = ({ setShowLogin }) => {
         {isAuthenticated ? (
           <button
             onClick={handleLogout}
-            className="border-2 border-rose-600 md:px-3 md:py-2 px-2 py-1 rounded-3xl text-rose-600 font-semibold hover:bg-rose-500 hover:text-white transition-all duration-300 ease-in-out text-[16px] md:text-[18px]"
+            className="border-2 border-white md:px-3 md:py-2 px-2 py-1 rounded-3xl text-white font-semibold hover:bg-rose-500 hover:text-white transition-all duration-300 ease-in-out text-[16px] md:text-[18px]"
           >
             Logout
           </button>
         ) : (
           <button
             onClick={() => setShowLogin(true)}
-            className="border-2 border-rose-600 md:px-3 md:py-2 px-2 py-1 rounded-3xl text-rose-600 font-semibold hover:bg-rose-500 hover:text-white transition-all duration-300 ease-in-out text-[16px] md:text-[18px]"
+            className="border-2 border-white md:px-3 md:py-2 px-2 py-1 rounded-3xl text-white font-semibold hover:bg-rose-500 hover:text-white transition-all duration-300 ease-in-out text-[16px] md:text-[18px]"
           >
             Sign Up
           </button>

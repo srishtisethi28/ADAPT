@@ -11,7 +11,7 @@ const MainSticker = () => {
               prevCategory === item.shop_name ? "All" : item.shop_name
             )
           }
-          className="flex flex-col items-center justify-center  gap-4 cursor-pointer flex-shrink-0"
+          className="flex flex-col items-center justify-center  gap-4 cursor-pointer flex-shrink-0  bg-transparent"
         >
           <img
             className={
@@ -22,7 +22,7 @@ const MainSticker = () => {
             src={item.shop_img}
             alt={item.shop_name}
           />
-          <p className="text-[#404556] text-xl sm:text-lg xs:text-base hover:text-rose-500 transition-all duration-300 ease-in-out font-semibold">
+          <p className="text-white sm:text-lg xs:text-base hover:text-rose-500 transition-all duration-300 ease-in-out font-semibold">
             {item.shop_name}
           </p>
         </div>

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cherry: ["Cherry Bomb", "cursive"], // Add custom font
+      },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },

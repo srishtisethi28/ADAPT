@@ -45,7 +45,7 @@ export const Cart = ({showFooter,setShowFooter}) => {
       ) : (
         // Show cart items when cart is not empty
         <div>
-          <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-gray-600 font-bold text-xl">
+          <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-white font-bold text-xl mb-4">
             <p>Item</p>
             <p>Title</p>
             <p>Price</p>
@@ -54,12 +54,11 @@ export const Cart = ({showFooter,setShowFooter}) => {
             <p>Remove</p>
             <p>Add</p>
           </div>
-          <hr />
           {product_list.map(
             (item, index) =>
               cartItems[item._id] > 0 && (
                 <div key={index}>
-                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-gray-500">
+                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
                     <img
                       className="p-4 w-40 rounded-full"
                       src={item.image}
@@ -88,7 +87,6 @@ export const Cart = ({showFooter,setShowFooter}) => {
                       />
                     </div>
                   </div>
-                  <hr />
                 </div>
               )
           )}
@@ -96,7 +94,7 @@ export const Cart = ({showFooter,setShowFooter}) => {
             (item, index) =>
               cartItems[item._id] > 0 && (
                 <div key={index}>
-                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-gray-500">
+                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
                     <img
                       className="p-4 w-40 rounded-full"
                       src={item.image}
@@ -135,19 +133,19 @@ export const Cart = ({showFooter,setShowFooter}) => {
           <div className="mt-20 flex flex-col-reverse md:flex-row justify-between gap-[max(12vw,20px)] ">
             {/* Cart Total */}
             <div className="flex-1 flex flex-col gap-5">
-              <h2 className="text-xl font-semibold">Cart Total</h2>
+              <h2 className="text-xl font-semibold text-white">Cart Total</h2>
               <div>
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-white">
                   <p>Subtotal</p>
                   <p>₹{totalAmount}</p>
                 </div>
                 <hr className="my-2" />
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-white">
                   <p>Delivery Fee</p>
                   <p>₹{totalAmount === 0 ? 0 : 100}</p>
                 </div>
                 <hr className="my-2" />
-                <div className="flex justify-between font-bold">
+                <div className="flex justify-between font-bold text-white">
                   <b>Total</b>
                   <b>₹{totalAmount === 0 ? 0 : totalAmount + 100}</b>
                 </div>
@@ -162,7 +160,7 @@ export const Cart = ({showFooter,setShowFooter}) => {
 
             {/* Promo Code Section */}
             <div className="flex-1">
-              <p className="text-gray-600">
+              <p className="text-white">
                 If you have any promo code, enter it here
               </p>
               <div className="mt-2 flex justify-between items-center bg-gray-200 rounded">

@@ -33,24 +33,24 @@ const LoginPopup = ({ setShowLogin }) => {
   
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
       <form
         onSubmit={handleSubmit}
         className="bg-white w-[min(95%,400px)] flex flex-col gap-6 p-8 rounded-lg shadow-lg animate-fadeIn"
       >
         {/* Title and Close Button */}
-        <div className="flex justify-between items-center text-black">
-          <h2 className="text-xl font-semibold">{currState}</h2>
+        <div className="flex justify-between items-center text-white bg-transparent">
+          <h2 className="text-xl font-semibold bg-transparent text-black">{currState}</h2>
           <img
             src={assets.cross_icon}
             onClick={() => setShowLogin(false)}
-            className="w-5 cursor-pointer"
+            className="w-5 cursor-pointer bg-transparent"
             alt="Close"
           />
         </div>
 
         {/* Input Fields */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 bg-transparent">
           {currState === "Sign Up" && (
             <input
               type="text"
@@ -59,7 +59,7 @@ const LoginPopup = ({ setShowLogin }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="border border-gray-300 p-2 rounded-md outline-none focus:ring-2 focus:ring-rose-500"
+              className="border border-gray-300  p-2 rounded-md outline-none focus:ring-2 text-white focus:ring-rose-500 bg-transparent"
             />
           )}
           <input
@@ -69,7 +69,7 @@ const LoginPopup = ({ setShowLogin }) => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="border border-gray-300 p-2 rounded-md outline-none focus:ring-2 focus:ring-rose-500"
+            className="border border-gray-300 p-2 rounded-md outline-none focus:ring-2 text-white focus:ring-rose-500 bg-transparent"
           />
           <input
             type="password"
@@ -78,7 +78,7 @@ const LoginPopup = ({ setShowLogin }) => {
             value={formData.password}
             onChange={handleChange}
             required
-            className="border border-gray-300 p-2 rounded-md outline-none focus:ring-2 focus:ring-rose-500"
+            className="border border-gray-300 p-2 rounded-md outline-none focus:ring-2 text-white focus:ring-rose-500 bg-transparent"
           />
         </div>
 
@@ -88,15 +88,15 @@ const LoginPopup = ({ setShowLogin }) => {
         </button>
 
         {/* Terms and Conditions */}
-        <div className="flex items-start gap-2 text-sm text-gray-600">
-          <input type="checkbox" required className="mt-1" />
-          <p>
+        <div className="flex items-start gap-2 text-sm text-gray-600 bg-transparent">
+          <input type="checkbox"  className="mt-1 bg-transparent"  required />
+          <p className="bg-transparent">
             By continuing, I agree to the{" "}
-            <span className="text-rose-500 font-medium cursor-pointer">
+            <span className="text-rose-500 font-medium cursor-pointer bg-transparent">
               terms of use
             </span>{" "}
             &{" "}
-            <span className="text-rose-500 font-medium cursor-pointer">
+            <span className="text-rose-500 font-medium cursor-pointer bg-transparent">
               privacy policy
             </span>
             .
@@ -104,13 +104,13 @@ const LoginPopup = ({ setShowLogin }) => {
         </div>
 
         {/* Toggle Between Login and Sign Up */}
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 bg-transparent">
           {currState === "Login" ? (
             <>
               Create a new account?{" "}
               <span
                 onClick={() => setCurrState("Sign Up")}
-                className="text-rose-500 font-medium cursor-pointer"
+                className="text-rose-500 font-medium cursor-pointer bg-transparent"
               >
                 Click here
               </span>
@@ -120,7 +120,7 @@ const LoginPopup = ({ setShowLogin }) => {
               Already have an account?{" "}
               <span
                 onClick={() => setCurrState("Login")}
-                className="text-rose-500 font-medium cursor-pointer"
+                className="text-rose-500 font-medium cursor-pointer bg-transparent"
               >
                 Login here
               </span>

@@ -3,8 +3,8 @@ import { assets } from '../assets/assets';
 
 const Footer = () => {
   return (
-    <div className='footer mt-32 p-10 text-gray-300 bg-[#323232] z-10  ' id='footer'>
-      <div className="footer-content flex flex-col md:flex-row justify-between p-6 gap-6 md:gap-10">
+    <div className='footer mt-28 p-10 text-gray-300  z-10  border-t-2 border-t-slate-700 ' id='footer'>
+      <div className="footer-content flex flex-col md:flex-row justify-between p-6 gap-6 md:gap-10 ">
         <div className="footer-content-left md:w-2/5">
           <h2 className='text-rose-500 font-bold text-3xl'>ADAPT</h2>
           <p className='text-lg'>
