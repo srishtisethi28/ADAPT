@@ -1,6 +1,9 @@
 import logo from './logo.jpg'
 import cart from './cart.png'
 import arrow from './arrow.png'
+import bag_icon from './bag_icon.png'
+import logout_icon from './logout_icon.png'
+import profile_icon from './profile_icon.png'
 import arrowhover from './arrowhover.png'
 import explore_4 from './hearings.jpg'
 import explore_2 from './walkers.jpg'
@@ -144,7 +147,10 @@ export const assets = {
     linkedin_icon,
     facebook_icon,
     twitter_icon,
-    cross_icon
+    cross_icon,
+    bag_icon,
+    logout_icon,
+    profile_icon
 
 }
 export const shop_list=[
