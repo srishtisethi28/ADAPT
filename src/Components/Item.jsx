@@ -3,11 +3,11 @@ import { assets } from '../assets/assets';
 import { StoreContext } from '../context/StoreContext';
 
 const Item = ({id,name,price,description,image}) => {
-  const {cartItems,addToCart,removeFromCart}=useContext(StoreContext)
+  const {cartItems,addToCart,removeFromCart,url}=useContext(StoreContext)
   return (
     <div className='flex flex-col   rounded-xl  shadow-[0px_0px_12px_rgba(183,150,185,0.54)]  z-10 hover:scale-105 transition-all duration-300 ease-in-out '>
       <div className='relative rounded-xl'>
-        <img className='xl:w-80 xl:h-44 w-64 h-52 561px:w-56 561px:h-40 lg:h-48 md:h-48 md:w-64 lg:w-68 sm:h-40 sm:w-64 rounded-t-xl p-2 ' src={image} alt="" />
+        <img className='xl:w-80 xl:h-44 w-64 h-52 561px:w-56 561px:h-40 lg:h-48 md:h-48 md:w-64 lg:w-68 sm:h-40 sm:w-64 rounded-t-xl p-2 ' src={url+"/images/"+image} alt="" />
 
         {!cartItems[id]?
           <img className='absolute bottom-2 right-2 w-10 shadow-md z-20 shadow-gray-100 rounded-full'  onClick={()=>addToCart(id)} src={assets.add_icon_white}/>:

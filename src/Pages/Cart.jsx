@@ -11,6 +11,7 @@ export const Cart = ({showFooter,setShowFooter}) => {
     product_list,
     main_shop,
     getTotalCartAmmount,
+    url
   } = useContext(StoreContext);
   useEffect(() => {
           
@@ -61,7 +62,7 @@ export const Cart = ({showFooter,setShowFooter}) => {
                   <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
                     <img
                       className="p-4 w-40 rounded-full"
-                      src={item.image}
+                      src={url+"/images/"+item.image}
                       alt=""
                     />
                     <p className="text-wrap w-[60%] mx-auto">{item.name}</p>
