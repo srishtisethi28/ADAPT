@@ -5,6 +5,11 @@ import itemRouter from "./routes/itemRoute.js"
 import "dotenv/config" 
 import userRouter from "./routes/userRoute.js"
 import shopRouter from "./routes/shopRoute.js"
+import cartRouter from "./routes/cartRoute.js"
+import { EventEmitter } from 'events';
+import orderRouter from "./routes/orderRoute.js"
+EventEmitter.defaultMaxListeners = 20; 
+
 
 //app consif
 const app=express()
@@ -23,6 +28,8 @@ app.use("/api/shop",shopRouter)
 app.use("/images",express.static('uploads'))
 app.use("/shopImages",express.static('ShopData'))
 app.use("/api/user",userRouter)
+app.use("/api/cart",cartRouter)
+app.use("/api/order",orderRouter)
 
 app.get("/",(req,res)=>{
     res.send("Api Working")

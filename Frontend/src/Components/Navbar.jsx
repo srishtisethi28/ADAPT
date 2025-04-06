@@ -18,22 +18,23 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24 fixed top-0 left-1/2 transform -translate-x-1/2 w-full bg-black shadow-sm shadow-gray-600 z-50 px-6 pr-8">
-      <Link to="/">
-        <h3 className="text-3xl text-white font-cherry font-bold tracking-widest bg-black">
+    <div className="flex justify-between items-center h-24 fixed top-0 left-1/2 transform -translate-x-1/2 w-full  z-50 px-6 pr-8 bg-gradient-to-b from-black to-zinc-900">
+
+      <Link to="/" className="bg-transparent">
+        <h3 className="text-3xl text-white font-cherry font-bold tracking-widest bg-transparent">
           ADAPT
         </h3>
       </Link>
 
       {/* Menu Items */}
-      <div className="menu-items hidden sm:block ">
-        <ul className="flex md:gap-14 gap-12 font-medium text-[16px] md:text-[20px] text-white bg-black">
+      <div className="menu-items hidden sm:block bg-transparent">
+        <ul className="flex md:gap-14 gap-12 font-medium text-[16px] md:text-[20px] text-white bg-transparent">
           {["home", "shop", "tools", "contact"].map((item) => (
             <Link
               key={item}
               to={item === "home" ? "/" : `/${item}`}
               onClick={() => setMenu(item)}
-              className={`cursor-pointer pb-2 transition duration-200 bg-black ${
+              className={`cursor-pointer pb-2 transition duration-200 bg-transparent ${
                 menu === item
                   ? "border-b-2 border-rose-500 text-rose-600"
                   : "hover:text-rose-500 transition-all duration-400 ease-in"
@@ -46,10 +47,10 @@ const Navbar = ({ setShowLogin }) => {
       </div>
 
       {/* Right Menu */}
-      <div className="menu-right flex md:gap-x-10 gap-x-8 items-center bg-black">
-        <div className="relative bg-black ">
+      <div className="menu-right flex md:gap-x-10 gap-x-8 items-center bg-transparent">
+        <div className="relative bg-transparent ">
           <Link to="/cart" >
-            <PiShoppingCartSimpleFill color="white" className="bg-black" size={30} />
+            <PiShoppingCartSimpleFill color="white" className="bg-transparent" size={30} />
           </Link>
           <div
             className={
@@ -76,14 +77,14 @@ const Navbar = ({ setShowLogin }) => {
             />
 
             <ul className="absolute right-0 hidden group-hover:flex flex-col gap-2 w-28 bg-rose-200 p-4 rounded-md border border-rose-500 outline outline-2 outline-white list-none shadow-md bg-transparent">
-              <li className="flex items-center gap-2 cursor-pointer hover:text-rose-500 bg-transparent">
+              <li className="flex items-center gap-2 cursor-pointer text-white hover:text-rose-500 bg-transparent">
                 <img src={assets.bag_icon} alt="Orders" className="w-5 bg-transparent" />
-                <p className="bg-transparent">Orders</p>
+                <p className="bg-transparent ">Orders</p>
               </li>
               <hr className="border-t border-rose-400 bg-transparent" />
               <li
                 onClick={logout}
-                className="flex items-center gap-2 cursor-pointer hover:text-rose-600 bg-transparent"
+                className="flex items-center gap-2 cursor-pointer text-white hover:text-rose-600 bg-transparent"
               >
                 <img src={assets.logout_icon} alt="Logout" className="w-5 bg-transparent" />
                 <p className="bg-transparent">Logout</p>

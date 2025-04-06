@@ -12,9 +12,10 @@ export const Home = ({showFooter,setShowFooter}) => {
         setShowFooter(true)
       }, [showFooter])
   return (
-    <div className='w-[80%] mx-auto bg-black'>
+    <div className='w-full mx-auto bg-black'>
+      
         <Header/>
-        <ExploreShop/>
+        {/* <ExploreShop/> */}
         <ExploreItems category={category} setCategory={setCategory}/>
         <Display category={category} />
     </div>
