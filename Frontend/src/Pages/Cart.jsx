@@ -1,9 +1,9 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { StoreContext } from "../context/StoreContext";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
-export const Cart = ({showFooter,setShowFooter}) => {
+export const Cart = ({ showFooter, setShowFooter }) => {
   const {
     cartItems,
     removeFromCart,
@@ -11,23 +11,21 @@ export const Cart = ({showFooter,setShowFooter}) => {
     product_list,
     main_shop,
     getTotalCartAmmount,
-    url
+    url,
   } = useContext(StoreContext);
-  useEffect(() => {
-          
-          setShowFooter(true)
-        }, [showFooter])
 
   const navigate = useNavigate();
-  const totalAmount = getTotalCartAmmount(); // Store total amount in a variable
+  const totalAmount = getTotalCartAmmount();
+
+  useEffect(() => {
+    setShowFooter(true);
+  }, [showFooter, setShowFooter]);
 
   return (
     <div className="mt-32 text-center w-[80%] mx-auto">
       {totalAmount === 0 ? (
         <div className="flex flex-col items-center gap-5">
-          <h2 className="text-2xl font-semibold text-white">
-            Your Cart is Empty
-          </h2>
+          <h2 className="text-2xl font-semibold text-white">Your Cart is Empty</h2>
           <button
             onClick={() => {
               navigate("/shop");
@@ -44,8 +42,8 @@ export const Cart = ({showFooter,setShowFooter}) => {
           </button>
         </div>
       ) : (
-        // Show cart items when cart is not empty
         <div>
+          {/* Header Row */}
           <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-white font-bold text-xl mb-4">
             <p>Item</p>
             <p>Title</p>
@@ -55,58 +53,22 @@ export const Cart = ({showFooter,setShowFooter}) => {
             <p>Remove</p>
             <p>Add</p>
           </div>
+
+          {/* Product List Items */}
           {product_list.map(
             (item, index) =>
               cartItems[item._id] > 0 && (
-                <div key={index}>
+                <div key={`product-${index}`}>
                   <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
                     <img
                       className="p-4 w-40 rounded-full"
-                      src={url+"/images/"+item.image}
-                      alt=""
+                      src={`${url}/images/${item.image}`}
+                      alt="product"
                     />
                     <p className="text-wrap w-[60%] mx-auto">{item.name}</p>
                     <p>₹{item.price}</p>
                     <p>{cartItems[item._id]}</p>
                     <p>₹{item.price * cartItems[item._id]}</p>
-                    
-                    {/* Centering Remove and Add Buttons */}
-                    <div className="flex justify-center">
-                      <img
-                        className="cursor-pointer w-6 h-6"
-                        onClick={() => removeFromCart(item._id)}
-                        src={assets.remove_icon_red}
-                        alt="Remove"
-                      />
-                    </div>
-                    <div className="flex justify-center">
-                      <img
-                        className="cursor-pointer w-6 h-6"
-                        onClick={() => addToCart(item._id)}
-                        src={assets.add_icon_green}
-                        alt="Add"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )
-          )}
-          {main_shop.map(
-            (item, index) =>
-              cartItems[item._id] > 0 && (
-                <div key={index}>
-                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
-                    <img
-                      className="p-4 w-40 rounded-full"
-                      src={item.image}
-                      alt=""
-                    />
-                    <p className="text-wrap w-[60%] mx-auto">{item.name}</p>
-                    <p>₹{item.price}</p>
-                    <p>{cartItems[item._id]}</p>
-                    <p>₹{item.price * cartItems[item._id]}</p>
-                    
-                    {/* Centering Remove and Add Buttons */}
                     <div className="flex justify-center">
                       <img
                         className="cursor-pointer w-6 h-6"
@@ -128,10 +90,46 @@ export const Cart = ({showFooter,setShowFooter}) => {
                 </div>
               )
           )}
-          <hr />
 
-          {/* Cart Bottom Section */}
-          <div className="mt-20 flex flex-col-reverse md:flex-row justify-between gap-[max(12vw,20px)] ">
+          {/* Main Shop Items */}
+          {main_shop.map(
+            (item, index) =>
+              cartItems[item._id] > 0 && (
+                <div key={`shop-${index}`}>
+                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
+                    <img
+                      className="p-4 w-40 rounded-full"
+                      src={`${url}/shopImages/${item.image}`}
+                      alt="shop"
+                    />
+                    <p className="text-wrap w-[60%] mx-auto">{item.name}</p>
+                    <p>₹{item.price}</p>
+                    <p>{cartItems[item._id]}</p>
+                    <p>₹{item.price * cartItems[item._id]}</p>
+                    <div className="flex justify-center">
+                      <img
+                        className="cursor-pointer w-6 h-6"
+                        onClick={() => removeFromCart(item._id)}
+                        src={assets.remove_icon_red}
+                        alt="Remove"
+                      />
+                    </div>
+                    <div className="flex justify-center">
+                      <img
+                        className="cursor-pointer w-6 h-6"
+                        onClick={() => addToCart(item._id)}
+                        src={assets.add_icon_green}
+                        alt="Add"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+              )
+          )}
+
+          {/* Cart Summary */}
+          <div className="mt-20 flex flex-col-reverse md:flex-row justify-between gap-[max(12vw,20px)]">
             {/* Cart Total */}
             <div className="flex-1 flex flex-col gap-5">
               <h2 className="text-xl font-semibold text-white">Cart Total</h2>
