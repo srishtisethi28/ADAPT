@@ -44,6 +44,7 @@ export const Cart = ({ showFooter, setShowFooter }) => {
       ) : (
         <div>
           {/* Header Row */}
+          <div className="text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500 mb-16 drop-shadow-lg animate-pulse mt-8">My Cart</div>
           <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-white font-bold text-xl mb-4">
             <p>Item</p>
             <p>Title</p>

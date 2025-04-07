@@ -79,7 +79,10 @@ const Navbar = ({ setShowLogin }) => {
             <ul className="absolute right-0 hidden group-hover:flex flex-col gap-2 w-28 bg-rose-200 p-4 rounded-md border border-rose-500 outline outline-2 outline-white list-none shadow-md bg-transparent">
               <li className="flex items-center gap-2 cursor-pointer text-white hover:text-rose-500 bg-transparent">
                 <img src={assets.bag_icon} alt="Orders" className="w-5 bg-transparent" />
+                <Link to='/cart'>
+                
                 <p className="bg-transparent ">Orders</p>
+                </Link>
               </li>
               <hr className="border-t border-rose-400 bg-transparent" />
               <li
