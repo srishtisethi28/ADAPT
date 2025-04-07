@@ -9,7 +9,7 @@ const MainShopDisplay = ({ category, setCategory }) => {
     const { main_shop } = useContext(StoreContext);
 
     return (
-        <div className='flex flex-col gap-12 w-[95%] pl-12 pr-6'>
+        <div className="flex flex-col gap-12 w-[95%] pl-12 pr-6">
 
             <Stickers category={category} setCategory={setCategory} />
 

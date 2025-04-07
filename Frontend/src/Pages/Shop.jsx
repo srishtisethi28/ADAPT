@@ -1,21 +1,51 @@
-import React, {useState, useEffect} from 'react'
-import { ExploreItems } from '../Components/ExploreItems'
-import { Display } from '../Components/Display'
-import MainShopDisplay from '../Components/MainShopDisplay';
+import React, { useState, useContext } from 'react';
+import { StoreContext } from '../context/StoreContext';
+import MainItem from '../Components/MainItem';
+import Stickers from '../Components/Stickers';
 
 const Shop = () => {
-    const [category,setCategory]=useState("All");
-    
-    
+  const [category, setCategory] = useState("All");
+  const { main_shop } = useContext(StoreContext);
+
   return (
-    <div className=' mt-[8.5rem] w-full '>
-      <div className="heading flex flex-col justify-center items-center gap-2">
-        <h2 className='text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500 mb-16 drop-shadow-lg animate-pulse mt-8'>Our Products</h2>
-        <p className='text-xl text-white'>Discover a range of products designed to make life easier and more accessible for everyone</p>
-        <MainShopDisplay category={category} setCategory={setCategory}/>
+    <div className="mt-[6rem] w-full flex flex-col justify-center items-center">
+      {/* Background Header */}
+      <div className="heading flex flex-col justify-center items-center gap-2 bg-cover bg-center bg-no-repeat w-full h-[32rem]"
+        style={{
+          backgroundImage: `url('https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg?t=st=1744037307~exp=1744040907~hmac=876540d7435c4404398b8daeb8c77d3fe541264bb284e0e860276d33061fd567&w=1380')`,
+        }}>
+        <h2 className='text-center text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500 mb-16 drop-shadow-lg animate-pulse mt-8'>
+          Our Products
+        </h2>
+        <p className='text-2xl text-white bg-transparent'>
+          Discover a range of products designed to make life easier and more accessible for everyone
+        </p>
+      </div>
+
+      {/* Filter Stickers */}
+      <div className="w-[95%] pl-12 pr-6 flex flex-col gap-12">
+        <Stickers category={category} setCategory={setCategory} />
+
+        {/* Product grid */}
+        <div className="mt-4 flex flex-col gap-4 items-center rounded-xl p-8">
+          <div className='grid xl:grid-cols-5 md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-3 561px:grid-cols-2 lg:gap-8 xl:gap-10 gap-8'>
+            {main_shop
+              .filter(item => category === "All" || item.category === category)
+              .map((item, index) => (
+                <MainItem
+                  key={index}
+                  id={item._id}
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                  image={item.image}
+                />
+              ))}
+          </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;
