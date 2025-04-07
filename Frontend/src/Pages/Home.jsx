@@ -5,6 +5,7 @@ import { ExploreShop } from '../Components/ExploreShop';
 import { ExploreItems } from '../Components/ExploreItems';
 import Footer from '../Components/Footer';
 import Contact from './Contact';
+import ContactComponent from '../Components/ContactComponent';
 
 export const Home = ({showFooter,setShowFooter}) => {
   const [category,setCategory]=useState("All");
@@ -19,7 +20,7 @@ export const Home = ({showFooter,setShowFooter}) => {
         {/* <ExploreShop/> */}
         <ExploreItems category={category} setCategory={setCategory}/>
         <Display category={category} />
-        <Contact/>
+        <ContactComponent/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa";
 
 export const Header = () => {
@@ -24,13 +24,13 @@ export const Header = () => {
         <p className="text-white text-base md:text-lg lg:text-xl hidden md:block bg-transparent">
           Discover a wide range of disability aids designed to make life easier, more independent, and accessible for everyone.
         </p>
-        <Link 
+        <NavLink 
           to="/shop"
           className="bg-rose-600 hover:bg-white text-white hover:text-rose-600 font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center gap-2 w-fit shadow-lg group"
         >
           Shop Now
           
-        </Link>
+        </NavLink>
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center text-center gap-5 md:gap-6 px-6 py-12 w-[90%] md:w-[75%] xl:w-[60%] mx-auto rounded-3xl bg-transparent mt-96">
         <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold leading-tight bg-transparent">
@@ -42,12 +42,12 @@ export const Header = () => {
           enhance accessibility and make digital interaction seamless for
           everyone.
         </p>
-        <Link to="/tools">
+        <NavLink to="/tools">
         
         <button className="bg-rose-600 hover:bg-white hover:text-rose-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center gap-2 shadow-md group ">
           Try Now
         </button>
-        </Link>
+        </NavLink>
       </div>
     </div>
   )

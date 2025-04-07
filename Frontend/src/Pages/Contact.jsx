@@ -25,7 +25,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col gap-8 items-center justify-center px-4 mt-24 -mb-28 pb-28 bg-[url('https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg?t=st=1744037307~exp=1744040907~hmac=876540d7435c4404398b8daeb8c77d3fe541264bb284e0e860276d33061fd567&w=1380')] bg-center bg-no-repeat  bg-cover">
-        <h1 className="text-center text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500  mt-28 drop-shadow-lg animate-pulse ">
+        <h1 className="text-center text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500  mt-28 drop-shadow-lg animate-pulse ">
         📬 Contact Us
       </h1>
       <form

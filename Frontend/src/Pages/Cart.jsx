@@ -22,9 +22,9 @@ export const Cart = ({ showFooter, setShowFooter }) => {
   }, [showFooter, setShowFooter]);
 
   return (
-    <div className="mt-32 text-center w-[80%] mx-auto">
+    <div className="mt-24 text-center w-[80%] mx-auto ">
       {totalAmount === 0 ? (
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-5 ">
           <h2 className="text-2xl font-semibold text-white">Your Cart is Empty</h2>
           <button
             onClick={() => {
@@ -42,35 +42,35 @@ export const Cart = ({ showFooter, setShowFooter }) => {
           </button>
         </div>
       ) : (
-        <div>
+        <div className="bg-[url('https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg?t=st=1744037307~exp=1744040907~hmac=876540d7435c4404398b8daeb8c77d3fe541264bb284e0e860276d33061fd567&w=1380')] bg-cover bg-center bg-no-repeat ">
           {/* Header Row */}
-          <div className="text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500 mb-16 drop-shadow-lg animate-pulse mt-8">My Cart</div>
-          <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-white font-bold text-xl mb-4">
-            <p>Item</p>
-            <p>Title</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Total</p>
-            <p>Remove</p>
-            <p>Add</p>
+          <div className="text-center text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500 mb-16 drop-shadow-lg animate-pulse   pt-28">🛍️ My Cart</div>
+          <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-white font-bold text-xl mb-4 bg-transparent">
+            <p className="bg-transparent">Item</p>
+            <p className="bg-transparent">Title</p>
+            <p className="bg-transparent">Price</p>
+            <p className="bg-transparent">Quantity</p>
+            <p className="bg-transparent">Total</p>
+            <p className="bg-transparent">Remove</p>
+            <p className="bg-transparent">Add</p>
           </div>
 
           {/* Product List Items */}
           {product_list.map(
             (item, index) =>
               cartItems[item._id] > 0 && (
-                <div key={`product-${index}`}>
-                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
+                <div key={`product-${index}`} className="bg-transparent">
+                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white bg-transparent">
                     <img
-                      className="p-4 w-40 rounded-full"
+                      className="p-4 w-32 h-32 rounded-full bg-transparent"
                       src={`${url}/images/${item.image}`}
                       alt="product"
                     />
-                    <p className="text-wrap w-[60%] mx-auto">{item.name}</p>
-                    <p>₹{item.price}</p>
-                    <p>{cartItems[item._id]}</p>
-                    <p>₹{item.price * cartItems[item._id]}</p>
-                    <div className="flex justify-center">
+                    <p className="text-wrap w-[60%] mx-auto bg-transparent">{item.name}</p>
+                    <p className="bg-transparent">₹{item.price}</p>
+                    <p className="bg-transparent">{cartItems[item._id]}</p>
+                    <p className="bg-transparent">₹{item.price * cartItems[item._id]}</p>
+                    <div className="flex justify-center bg-transparent">
                       <img
                         className="cursor-pointer w-6 h-6"
                         onClick={() => removeFromCart(item._id)}
@@ -96,28 +96,28 @@ export const Cart = ({ showFooter, setShowFooter }) => {
           {main_shop.map(
             (item, index) =>
               cartItems[item._id] > 0 && (
-                <div key={`shop-${index}`}>
-                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white">
+                <div key={`shop-${index}`} className="bg-transparent">
+                  <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] items-center justify-center text-center text-md font-semibold text-white bg-transparent">
                     <img
-                      className="p-4 w-40 rounded-full"
+                      className="p-4 w-32 h-32 rounded-full bg-transparent"
                       src={`${url}/shopImages/${item.image}`}
                       alt="shop"
                     />
-                    <p className="text-wrap w-[60%] mx-auto">{item.name}</p>
-                    <p>₹{item.price}</p>
-                    <p>{cartItems[item._id]}</p>
-                    <p>₹{item.price * cartItems[item._id]}</p>
-                    <div className="flex justify-center">
+                    <p className="text-wrap w-[60%] mx-auto bg-transparent">{item.name}</p>
+                    <p className="bg-transparent">₹{item.price}</p>
+                    <p className="bg-transparent">{cartItems[item._id]}</p>
+                    <p className="bg-transparent">₹{item.price * cartItems[item._id]}</p>
+                    <div className="flex justify-center bg-transparent">
                       <img
-                        className="cursor-pointer w-6 h-6"
+                        className="cursor-pointer w-6 h-6 bg-transparent"
                         onClick={() => removeFromCart(item._id)}
                         src={assets.remove_icon_red}
                         alt="Remove"
                       />
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center bg-transparent">
                       <img
-                        className="cursor-pointer w-6 h-6"
+                        className="cursor-pointer w-6 h-6 bg-transparent"
                         onClick={() => addToCart(item._id)}
                         src={assets.add_icon_green}
                         alt="Add"
