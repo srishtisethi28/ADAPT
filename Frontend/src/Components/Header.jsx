@@ -42,10 +42,12 @@ export const Header = () => {
           enhance accessibility and make digital interaction seamless for
           everyone.
         </p>
-
+        <Link to="/tools">
+        
         <button className="bg-rose-600 hover:bg-white hover:text-rose-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center gap-2 shadow-md group ">
           Try Now
         </button>
+        </Link>
       </div>
     </div>
   )
