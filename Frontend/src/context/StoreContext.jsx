@@ -32,6 +32,7 @@ const StoreContextProvider= (props)=>{
         }
         toast.warning("Item Removed from cart",{
             autoClose:500,
+            theme:"dark"
         })
     }
 

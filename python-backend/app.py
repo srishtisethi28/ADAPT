@@ -5,7 +5,7 @@ import os
 import uuid
 
 app = Flask(__name__)
-CORS(app)  # Allow requests from React frontend
+CORS(app)  
 
 @app.route("/speak", methods=["POST"])
 def speak():
@@ -15,14 +15,11 @@ def speak():
     if not text.strip():
         return {"error": "No text provided"}, 400
 
-    # Generate unique filename
     filename = f"speech_{uuid.uuid4()}.mp3"
     filepath = os.path.join("audio", filename)
 
-    # Ensure audio folder exists
     os.makedirs("audio", exist_ok=True)
 
-    # Convert text to speech
     tts = gTTS(text)
     tts.save(filepath)
 

@@ -119,6 +119,8 @@ import main_b_8 from "./main_b_8.webp"
 import main_b_9 from "./main_b_9.jpg"
 import main_b_10 from "./main_b_10.jpg"
 
+import bg1 from "./bg1.jpg"
+
 export const assets = {
     logo,
     cart,
@@ -150,7 +152,8 @@ export const assets = {
     cross_icon,
     bag_icon,
     logout_icon,
-    profile_icon
+    profile_icon,
+    bg1
 
 }
 export const shop_list=[

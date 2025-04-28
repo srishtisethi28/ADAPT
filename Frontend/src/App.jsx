@@ -15,6 +15,7 @@ import MainHeade from "./Pages/MainHeade";
 import NotFound from "./Pages/NotFound";
 import Tools from "./Pages/Tools";
 import Contact from "./Pages/Contact";
+import  Library  from "./Pages/Library";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -33,6 +34,7 @@ function App() {
             <Route path="/tools" element={<Tools setShowFooter={setShowFooter} showFooter={showFooter} />} />
             <Route path="/contact" element={<Contact setShowFooter={setShowFooter} showFooter={showFooter}/>}/>
             <Route path="/cart" element={<Cart setShowFooter={setShowFooter} showFooter={showFooter} />} />
+            <Route path="/library" element={<Library setShowFooter={setShowFooter} showFooter={showFooter} />} />
             <Route path="/order" element={<PlaceOrder setShowFooter={setShowFooter} showFooter={showFooter} />} />
             <Route path="/about" element={<About />} />
           </Route>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { StoreContext } from "../context/StoreContext";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import bg1 from "../assets/bg1.jpg"; 
 
 export const Cart = ({ showFooter, setShowFooter }) => {
   const {
@@ -24,7 +25,8 @@ export const Cart = ({ showFooter, setShowFooter }) => {
   return (
     <div className="mt-24 text-center w-[80%] mx-auto ">
       {totalAmount === 0 ? (
-        <div className="flex flex-col items-center gap-5 ">
+        <div className="flex flex-col items-center justify-center gap-5  bg-cover bg-center bg-no-repeat h-80 -mb-28 "
+        style={{ backgroundImage: `url(${bg1})` }}>
           <h2 className="text-2xl font-semibold text-white">Your Cart is Empty</h2>
           <button
             onClick={() => {
@@ -42,7 +44,7 @@ export const Cart = ({ showFooter, setShowFooter }) => {
           </button>
         </div>
       ) : (
-        <div className="bg-[url('https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg?t=st=1744037307~exp=1744040907~hmac=876540d7435c4404398b8daeb8c77d3fe541264bb284e0e860276d33061fd567&w=1380')] bg-cover bg-center bg-no-repeat ">
+        <div className="bg-cover bg-center bg-no-repeat " style={{ backgroundImage: `url(${bg1})` }}>
           {/* Header Row */}
           <div className="text-center text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-rose-400 to-purple-500 mb-16 drop-shadow-lg animate-pulse   pt-28">🛍️ My Cart</div>
           <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr_0.5fr] justify-center items-center text-center text-white font-bold text-xl mb-4 bg-transparent">
