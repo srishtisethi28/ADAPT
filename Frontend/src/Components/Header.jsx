@@ -2,13 +2,14 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import { Link, NavLink } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa";
+import headerimg from "../assets/headerimg.jpg"
 
 export const Header = () => {
   return (
     <div className="relative w-full h-[80rem] mt-24 overflow-hidden">
       {/* Background Image */}
       <img 
-        src="https://img.freepik.com/free-photo/monochrome-portrait-athlete-competing-paralympic-games-championship_23-2151492801.jpg?t=st=1743949289~exp=1743952889~hmac=ad73b59f9107c6d0fe9905ba8f16edae931ec209a358c6e5bc69d0b4c733342d&w=1380" // <-- Make sure to place this image in your public folder
+        src={headerimg}
         alt="Adaptive Shopping"
         className="absolute inset-0 w-full h-full object-cover"
       />

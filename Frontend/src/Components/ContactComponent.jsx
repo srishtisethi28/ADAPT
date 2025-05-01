@@ -1,10 +1,12 @@
 import React from 'react';
-
+import Homecontact from "../assets/Homecontact.jpg"
 const ContactComponent = () => {
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center px-6 py-12 -mb-28">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('https://img.freepik.com/free-photo/black-white-portrait-athlete-competing-paralympics-championship-games_23-2151492682.jpg?t=st=1744045766~exp=1744049366~hmac=b50ba47b46484acfc9b15e0d9bf31f243f81517dd36e22b9d4d75d363520df0e&w=1380')] bg-cover bg-center brightness-50 z-0"></div>
+      <div className="absolute inset-0 bg-cover bg-center brightness-50 z-0" style={{
+    backgroundImage: `url(${Homecontact})`,
+  }}></div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-20 z-10"></div>

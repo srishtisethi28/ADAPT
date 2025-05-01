@@ -120,6 +120,8 @@ import main_b_9 from "./main_b_9.jpg"
 import main_b_10 from "./main_b_10.jpg"
 
 import bg1 from "./bg1.jpg"
+import Homecontact from "./Homecontact.jpg"
+import headerimg from "./headerimg.jpg"
 
 export const assets = {
     logo,
@@ -153,7 +155,9 @@ export const assets = {
     bag_icon,
     logout_icon,
     profile_icon,
-    bg1
+    bg1,
+    headerimg,
+    Homecontact
 
 }
 export const shop_list=[
