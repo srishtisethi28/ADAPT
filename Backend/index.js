@@ -20,7 +20,7 @@ const port = 3000;
 //middleware
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: ['http://localhost:5173','http://localhost:5174'], 
     credentials: true, 
 }));
 
@@ -36,7 +36,7 @@ app.use("/api/user", userRouter)
 app.use("/api/cart", cartRouter)
 app.use("/api/order", orderRouter)
 app.use("/api/contact", contactRouter)
-app.use("/api/resource", resourceRouter)   // <-- ADDED
+app.use("/api/resource", resourceRouter)   
 
 app.get("/", (req, res) => {
     res.send("Api Working")

@@ -43,13 +43,13 @@ const Sidebar = () => {
         </NavLink>
 
         {/* Orders */}
-        <NavLink 
+        {/* <NavLink 
           to='/order' 
           className={({ isActive }) => `flex items-center gap-3 border border-gray-400 border-r-0 p-2 rounded-l-md cursor-pointer 
             ${isActive ? 'bg-rose-400 border-rose-500 text-black' : 'text-[#fcfcfc]'}`}>
           <IoBasketSharp className="text-white" size={24} />
           <p className='max-md:hidden'>Orders</p>
-        </NavLink>
+        </NavLink> */}
 
       </div>
     </div>

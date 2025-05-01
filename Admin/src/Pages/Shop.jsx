@@ -43,7 +43,7 @@ const Shop = ({url}) => {
         <form onSubmit={onSubmitHandler} className="flex flex-col gap-5">
           
           <div className="flex flex-col w-[max(40%,280px)]">
-          <p>Upload Image</p>
+          <p className="text-gray-400">Upload Image</p>
             <label htmlFor="image" className="cursor-pointer">
               <img
                 src={image ? URL.createObjectURL(image) : assets.upload_area}
@@ -58,7 +58,7 @@ const Shop = ({url}) => {
               hidden
               required
             />
-            <p>Product name</p>
+            <p className="text-gray-400">Product name</p>
             <input
               onChange={onChangeHandler}
               value={data.name}
@@ -69,7 +69,7 @@ const Shop = ({url}) => {
             />
           </div>
           <div className="flex flex-col w-[max(40%,280px)]">
-            <p>Product description</p>
+            <p className="text-gray-400">Product description</p>
             <textarea
               onChange={onChangeHandler}
               value={data.description}
@@ -82,7 +82,7 @@ const Shop = ({url}) => {
           </div>
           <div className="flex gap-8">
             <div className="flex flex-col">
-              <p>Product category</p>
+              <p className="text-gray-400">Product category</p>
               <select
                 onChange={onChangeHandler}
                 name="category"
@@ -96,7 +96,7 @@ const Shop = ({url}) => {
               </select>
             </div>
             <div className="flex flex-col">
-              <p>Product price</p>
+              <p className="text-gray-400">Product price</p>
               <input
                 onChange={onChangeHandler}
                 value={data.price}
