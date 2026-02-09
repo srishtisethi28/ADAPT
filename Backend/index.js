@@ -10,17 +10,19 @@ import contactRouter from "./routes/conatctRoutes.js"
 import orderRouter from "./routes/orderRoute.js"
 import resourceRouter from "./routes/resourceRoute.js"   // <-- ADDED
 import { EventEmitter } from 'events';
+import dotenv from "dotenv";
+dotenv.config();
 
 EventEmitter.defaultMaxListeners = 20; 
 
 //app config
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 //middleware
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173','http://localhost:5174'], 
+    origin: [process.env.FRONTEND_URL, process.env.ADMIN_URL , "http://localhost:5173"], 
     credentials: true, 
 }));
 
